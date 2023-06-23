@@ -1,0 +1,4 @@
+<div class="sec">
+            <img onmouseout="normalImg(this)" onmouseover="bigImg(this)" border="0" src="food 7.jpg">
+            <p><span>Price:</span>200</p><br>
+        </div>

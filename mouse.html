@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicyhut.com</title>
+    <link rel="stylesheet" href="mouse.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h2>Spicy Hut</h2>
+        </div>
+        <nav class="spc">
+            <ul>
+                <li><a href="res.html">HOME</a></li>
+                <li><a href="form.html">MENU</a></li>
+                <li><a href="About.html">ABOUT_US</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input class="srch" type="text" name="" placeholder="Search here">
+            <a href="#"><button class="btn">Search</button></a>
+        </div>
+    </div>
+    <h1>Book A Dining</h1>
+    <div class="choice">
+        <h3>Booking Registration</h3>
+        <form id="form" onsubmit="myFunction1()">
+            <label for="name">Name:</label>
+            <input type="text" id="name"><br>
+            <label for="tel">Phone:</label>
+            <input type="tel" id="tel"><br>
+            <label for="mySelect">Address:</label>
+            <input id="mySelect" onchange="myFunction()"><br>
+            <label for="mySelect">Family Count:</label>
+            <input id="mySelect" onchange="myFunction()"><br>
+            <label for="mySelect">Type of Dish:</label>
+            <select id="mySelect" onchange="myFunction()">
+                <option value="1">VEG</option>
+                <option value="2">NON-VEG</option>
+               <!-- <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>-->
+            </select><br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("mySelect").value;
+                document.getElementById("demo").innerHTML = "You selected: " + x;
+            }
+        </script>
+        <script>
+            const form = document.getElementById("form");
+
+            form.addEventListener("focus",(event) => {
+                event.target.style.background = "green";
+            },
+            true
+            );
+
+            form.addEventListener("blur",(event) => {
+                event.target.style.background = "";
+            },
+            true
+            );
+
+            function myFunction1() {
+                window.alert("The form was submitted");
+            }
+
+
+        </script>
+    
+        <p id="demo"></p>
+
+    </div>
+    <h1 class="id">Special Menu's</h1>
+    <div class="flex">
+        <div class="sec">
+            <img onmouseout="normalImg(this)" onmouseover="bigImg(this)" border="0" src="food 5.jpg">
+            <p><span>Price:</span>300</p><br>
+        </div>
+        <div class="sec">
+            <img onmouseout="normalImg(this)" onmouseover="bigImg(this)" border="0" src="food 6.jpg">
+            <p><span>Price:</span>500</p><br>
+        </div>
+        <script>
+            function bigImg(x) {
+                x.style.height = "300px";
+                x.style.width = "400px";
+            }
+
+            function normalImg(x) {
+                x.style.height = "200px";
+                x.style.width = "300px";
+            }
+        </script>
+    </div>
+</body>
+</html>

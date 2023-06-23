@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spicy Hut</title>
+  <style>
+    
+    .reservation-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="reservationButton">Make a Reservation</button>
+
+  <div id="reservationForm" class="reservation-form">
+    <!-- Reservation form HTML -->
+    <form id="form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    const reservationButton = document.getElementById('reservationButton');
+    const reservationForm = document.getElementById('reservationForm');
+    const form = document.getElementById('form');
+
+    reservationButton.addEventListener('click', function() {
+      displayReservationForm();
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitReservationForm();
+    });
+
+    function displayReservationForm() {
+      reservationForm.style.display = 'block';
+    }
+
+    function submitReservationForm() {
+    
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      form.reset();
+      reservationForm.style.display = 'none';
+      alert('Reservation submitted successfully!');
+    }
+  </script>
+</body>
+</html>
